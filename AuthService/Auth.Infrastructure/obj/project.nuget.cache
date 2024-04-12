@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "0fXQCsBoC/CvZwIXZ9ON43L0EjjrNT7LinR6V3zLtTBWc921t5HMxOK/AWroKmA5Ie2P1AVJlkyZfiJITwr91Q==",
+  "success": true,
+  "projectFilePath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\David Maged\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\David Maged\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\David Maged\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}
