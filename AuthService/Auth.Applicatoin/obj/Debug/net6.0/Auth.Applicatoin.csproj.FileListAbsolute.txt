@@ -6,8 +6,12 @@ E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\AuthAPI.e
 E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\Auth.Applicatoin.deps.json
 E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\Auth.Applicatoin.dll
 E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\Auth.Applicatoin.pdb
+E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\Auth.Core.dll
+E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\Auth.Infrastructure.dll
 E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\AuthAPI.dll
 E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\AuthAPI.pdb
+E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\Auth.Core.pdb
+E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\bin\Debug\net6.0\Auth.Infrastructure.pdb
 E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\obj\Debug\net6.0\Auth.Applicatoin.csproj.AssemblyReference.cache
 E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\obj\Debug\net6.0\Auth.Applicatoin.GeneratedMSBuildEditorConfig.editorconfig
 E:\Learning\Auth-Service\AuthService\Auth.Applicatoin\obj\Debug\net6.0\Auth.Applicatoin.AssemblyInfoInputs.cache

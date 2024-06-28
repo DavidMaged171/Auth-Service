@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\Learning\\Auth-Service\\AuthService\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{39A7193C-C913-4CFD-936A-664361B7ABBC}|Auth.Core\\Auth.Core.csproj|e:\\learning\\auth-service\\authservice\\auth.core\\auth.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{39A7193C-C913-4CFD-936A-664361B7ABBC}|Auth.Core\\Auth.Core.csproj|solutionrelative:auth.core\\auth.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{B0CD6045-8CB5-46AC-A769-BA63224A87E7}|Auth.Infrastructure\\Auth.Infrastructure.csproj|e:\\learning\\auth-service\\authservice\\auth.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0CD6045-8CB5-46AC-A769-BA63224A87E7}|Auth.Infrastructure\\Auth.Infrastructure.csproj|solutionrelative:auth.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0CD6045-8CB5-46AC-A769-BA63224A87E7}|Auth.Infrastructure\\Auth.Infrastructure.csproj|e:\\learning\\auth-service\\authservice\\auth.infrastructure\\persistence\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0CD6045-8CB5-46AC-A769-BA63224A87E7}|Auth.Infrastructure\\Auth.Infrastructure.csproj|solutionrelative:auth.infrastructure\\persistence\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{811D5500-3765-49DB-A93A-D3E5706A5A8E}|AuthAPI\\AuthAPI.csproj|e:\\learning\\auth-service\\authservice\\authapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,37 +22,52 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\Persistence\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Auth.Infrastructure\\Persistence\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\Persistence\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "Auth.Infrastructure\\Persistence\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T19:47:33.231Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Auth.Core",
-              "DocumentMoniker": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
-              "RelativeDocumentMoniker": "Auth.Core\\Auth.Core.csproj",
-              "ToolTip": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
-              "RelativeToolTip": "Auth.Core\\Auth.Core.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-04-12T18:53:33.329Z",
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "Auth.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "Auth.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T19:40:58.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Learning\\Auth-Service\\AuthService\\AuthAPI\\Program.cs",
               "RelativeDocumentMoniker": "AuthAPI\\Program.cs",
               "ToolTip": "E:\\Learning\\Auth-Service\\AuthService\\AuthAPI\\Program.cs",
               "RelativeToolTip": "AuthAPI\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-12T18:20:59.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T19:40:24.698Z"
             }
           ]
         }
