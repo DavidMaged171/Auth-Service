@@ -1,6 +1,6 @@
 ﻿namespace Auth.Core.Entities
 {
-    public class SiteUser
+    public class User
     {
         public int Id { get; set; }
         public string Email { get; set; }

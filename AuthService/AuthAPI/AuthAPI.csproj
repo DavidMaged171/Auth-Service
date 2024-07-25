@@ -20,7 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <Reference Include="Auth.Applicatoin">
+      <HintPath>..\Auth.Applicatoin\bin\Debug\net6.0\Auth.Applicatoin.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

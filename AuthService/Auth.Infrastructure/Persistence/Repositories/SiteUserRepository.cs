@@ -5,7 +5,7 @@ using Auth.Infrastructure.Persistence.Interfaces;
 
 namespace Auth.Infrastructure.Persistence.Repositories
 {
-    public class SiteUserRepository : GenericRepository<SiteUser>, ISiteUserRepository
+    public class SiteUserRepository : GenericRepository<User>, ISiteUserRepository
     {
         public SiteUserRepository(UserDbContext userDbContext) : base(userDbContext)
         {

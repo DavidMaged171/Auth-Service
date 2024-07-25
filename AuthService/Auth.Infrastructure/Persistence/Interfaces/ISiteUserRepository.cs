@@ -2,7 +2,7 @@
 
 namespace Auth.Infrastructure.Persistence.Interfaces
 {
-    public interface ISiteUserRepository: IGenericRepository<SiteUser>
+    public interface ISiteUserRepository: IGenericRepository<User>
     {
 
     }

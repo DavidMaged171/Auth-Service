@@ -14,7 +14,7 @@ namespace Auth.Infrastructure.DatabaseContext
         {
         }
 
-        public virtual DbSet<SiteUser> SiteUsers { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -27,7 +27,7 @@ namespace Auth.Infrastructure.DatabaseContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SiteUser>(entity =>
+            modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("SiteUser");
 

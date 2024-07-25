@@ -1,15 +1,36 @@
 [
   {
-    "ContainingType": "AuthAPI.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "AuthAPI.Controllers.AuthController",
+    "Method": "ResultAsync",
+    "RelativePath": "Register",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "FirstName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "LastName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[AuthAPI.WeatherForecast, AuthAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Auth.Applicatoin.DTOs.Requests.RegisterationRequest",
         "MediaTypes": [
           "text/plain",
           "application/json",
