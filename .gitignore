@@ -361,3 +361,32 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+/AuthService/.vs/AuthService/DesignTimeBuild/.dtbcache.v2
+/AuthService/.vs/AuthService/v17/.futdcache.v2
+/AuthService/.vs/AuthService/v17/.suo
+/AuthService/.vs/AuthService/v17/DocumentLayout.json
+/AuthService/.vs/ProjectEvaluation/authservice.metadata.v7.bin
+/AuthService/.vs/ProjectEvaluation/authservice.projects.v7.bin
+/AuthService/Auth.Applicatoin/obj/Debug/net6.0/Auth.Applicatoin.AssemblyInfoInputs.cache
+/AuthService/Auth.Applicatoin/obj/Debug/net6.0/Auth.Applicatoin.csproj.AssemblyReference.cache
+/AuthService/Auth.Infrastructure/bin/Debug/net6.0/Auth.Infrastructure.dll
+/AuthService/Auth.Infrastructure/bin/Debug/net6.0/Auth.Infrastructure.pdb
+/AuthService/Auth.Infrastructure/obj/Debug/net6.0/ref/Auth.Infrastructure.dll
+/AuthService/Auth.Infrastructure/obj/Debug/net6.0/refint/Auth.Infrastructure.dll
+/AuthService/Auth.Infrastructure/obj/Debug/net6.0/Auth.Infrastructure.AssemblyInfoInputs.cache
+/AuthService/Auth.Infrastructure/obj/Debug/net6.0/Auth.Infrastructure.dll
+/AuthService/Auth.Infrastructure/obj/Debug/net6.0/Auth.Infrastructure.pdb
+/AuthService/Auth.Infrastructure/obj/Debug/net6.0/Auth.Infrastructure.sourcelink.json
+/AuthService/AuthAPI/bin/Debug/net6.0/AuthAPI.dll
+/AuthService/AuthAPI/bin/Debug/net6.0/AuthAPI.exe
+/AuthService/AuthAPI/bin/Debug/net6.0/AuthAPI.pdb
+/AuthService/AuthAPI/obj/Debug/net6.0/ref/AuthAPI.dll
+/AuthService/AuthAPI/obj/Debug/net6.0/refint/AuthAPI.dll
+/AuthService/AuthAPI/obj/Debug/net6.0/apphost.exe
+/AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.AssemblyInfoInputs.cache
+/AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.sourcelink.json
+/AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.pdb
+/AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.dll
+/AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.csproj.AssemblyReference.cache
