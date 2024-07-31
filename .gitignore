@@ -390,3 +390,6 @@ FodyWeavers.xsd
 /AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.pdb
 /AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.dll
 /AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.csproj.AssemblyReference.cache
+/AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.genruntimeconfig.cache
+/AuthService/.vs/AuthService/v17/.suo
+/AuthService/.vs/AuthService/DesignTimeBuild/.dtbcache.v2
