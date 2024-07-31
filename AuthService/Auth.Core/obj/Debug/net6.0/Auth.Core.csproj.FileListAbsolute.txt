@@ -10,3 +10,15 @@ E:\Learning\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.dll
 E:\Learning\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\refint\Auth.Core.dll
 E:\Learning\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.pdb
 E:\Learning\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\ref\Auth.Core.dll
+E:\Work\Auth-Service\AuthService\Auth.Core\bin\Debug\net6.0\Auth.Core.deps.json
+E:\Work\Auth-Service\AuthService\Auth.Core\bin\Debug\net6.0\Auth.Core.dll
+E:\Work\Auth-Service\AuthService\Auth.Core\bin\Debug\net6.0\Auth.Core.pdb
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.csproj.AssemblyReference.cache
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.AssemblyInfoInputs.cache
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.AssemblyInfo.cs
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.csproj.CoreCompileInputs.cache
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.dll
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\refint\Auth.Core.dll
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\Auth.Core.pdb
+E:\Work\Auth-Service\AuthService\Auth.Core\obj\Debug\net6.0\ref\Auth.Core.dll

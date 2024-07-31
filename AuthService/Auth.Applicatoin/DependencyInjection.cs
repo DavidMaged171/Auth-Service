@@ -1,6 +1,8 @@
-﻿using Auth.Applicatoin.BusinessInterfaces;
+﻿
+using Auth.Applicatoin.BusinessInterfaces;
 using Auth.Applicatoin.BusinessLogic;
 using Auth.Applicatoin.Models;
+using Auth.Infrastructure.Persistence.DatabaseContext;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,9 +13,11 @@ namespace Auth.Applicatoin
     {
         public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
         {
+            //services.AddIdentity<ApplicationUser, IdentityRole>();
             services.AddTransient<IAuthProcessor, AuthProcessor>();
-
-            services.AddIdentity<ApplicationUser, IdentityRole>();
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+            .AddEntityFrameworkStores<UserDbContext>()
+            .AddDefaultTokenProviders();
             return services;
         }
     }

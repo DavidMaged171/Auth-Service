@@ -21,17 +21,18 @@ namespace Auth.Infrastructure
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(o => { 
+            }).AddJwtBearer(o =>
+            {
                 o.RequireHttpsMetadata = false;
                 o.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    ValidateIssuer=true,
-                    ValidateAudience=true,
-                    ValidateLifetime=true,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
                     ValidIssuer = configuration["JWT:ValidIssuer"],
-                    ValidAudience= configuration["JWT:ValidAudience"],
-                    IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]))
+                    ValidAudience = configuration["JWT:ValidAudience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]))
                 };
             });
             services.AddTransient<IUnitOfWork, UnitOfWork>();

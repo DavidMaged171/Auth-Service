@@ -8,23 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\David Maged\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\abdow\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
+      "projectUniqueName": "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
       "projectName": "Auth.Core",
-      "projectPath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
-      "packagesPath": "C:\\Users\\David Maged\\.nuget\\packages\\",
-      "outputPath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\obj\\",
+      "projectPath": "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
+      "packagesPath": "C:\\Users\\abdow\\.nuget\\packages\\",
+      "outputPath": "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\David Maged\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\abdow\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -44,11 +40,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -60,31 +51,16 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.27, 6.0.27]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.27, 6.0.27]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.27, 6.0.27]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
