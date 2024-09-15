@@ -19,7 +19,7 @@ namespace Auth.Applicatoin.BusinessLogic
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly JWT _jwt;
-        public AuthProcessor(UserManager<ApplicationUser> userManager, IUnitOfWork unitOfWork, IOptions<JWT> jwt)
+        public AuthProcessor (UserManager<ApplicationUser> userManager,IUnitOfWork unitOfWork,IOptions<JWT> jwt)
         {
             _userManager = userManager;
             _unitOfWork = unitOfWork;
@@ -28,25 +28,25 @@ namespace Auth.Applicatoin.BusinessLogic
         public async Task<RegestrationResponse> RegisterNewUser(RegisterationRequest request)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
-            if (user != null)
+            if (user!= null)
             {
-                return new RegestrationResponse { User = user, isRegistered = true };
+                return new RegestrationResponse { User=user,isRegistered=true };
             }
-            user = FromUserDTOToUser.Map(request);
-
-            var res = await _userManager.CreateAsync(user, request.Password);
-            if (!res.Succeeded)
-            {
-                var errors = new List<string>();
-                foreach (var error in res.Errors)
+            user= FromUserDTOToUser.Map(request);
+                
+                var res=await _userManager.CreateAsync(user,request.Password);
+                if(!res.Succeeded) 
                 {
-                    errors.Add(error.Description);
+                    var errors = new List<string>();
+                    foreach(var error in res.Errors)
+                    {
+                        errors.Add(error.Description);
+                    }
+                    return new RegestrationResponse { User=null,errors=errors };
                 }
-                return new RegestrationResponse { User = null, errors = errors };
-            }
-            await _userManager.AddToRoleAsync(user, "User");
+                await _userManager.AddToRoleAsync(user,"User");
             var JwtSecurityToken = await CreateJwtToken(user);
-            return new RegestrationResponse() { User = user, isRegistered = true, };
+            return new RegestrationResponse() { User=user,isRegistered=true,};
         }
         private async Task<JwtSecurityToken> CreateJwtToken(ApplicationUser user)
         {

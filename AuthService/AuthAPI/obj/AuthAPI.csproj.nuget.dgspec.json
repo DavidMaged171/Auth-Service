@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Work\\Auth-Service\\AuthService\\AuthAPI\\AuthAPI.csproj": {}
+    "E:\\Learning\\Auth-Service\\AuthService\\AuthAPI\\AuthAPI.csproj": {}
   },
   "projects": {
-    "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj": {
+    "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
+        "projectUniqueName": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
         "projectName": "Auth.Core",
-        "projectPath": "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
-        "packagesPath": "C:\\Users\\abdow\\.nuget\\packages\\",
-        "outputPath": "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\obj\\",
+        "projectPath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj",
+        "packagesPath": "C:\\Users\\David Maged\\.nuget\\packages\\",
+        "outputPath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\abdow\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\David Maged\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,26 +59,47 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+>>>>>>> 302db1a1bc777f73b3ba995f1c4ee2cf2b490bcf
         }
       }
     },
-    "E:\\Work\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj": {
+    "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Work\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
+        "projectUniqueName": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
         "projectName": "Auth.Infrastructure",
-        "projectPath": "E:\\Work\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\abdow\\.nuget\\packages\\",
-        "outputPath": "E:\\Work\\Auth-Service\\AuthService\\Auth.Infrastructure\\obj\\",
+        "projectPath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\David Maged\\.nuget\\packages\\",
+        "outputPath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\abdow\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\David Maged\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -90,8 +114,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj": {
-                "projectPath": "E:\\Work\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj"
+              "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj": {
+                "projectPath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Core\\Auth.Core.csproj"
               }
             }
           }
@@ -149,26 +173,47 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+>>>>>>> 302db1a1bc777f73b3ba995f1c4ee2cf2b490bcf
         }
       }
     },
-    "E:\\Work\\Auth-Service\\AuthService\\AuthAPI\\AuthAPI.csproj": {
+    "E:\\Learning\\Auth-Service\\AuthService\\AuthAPI\\AuthAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Work\\Auth-Service\\AuthService\\AuthAPI\\AuthAPI.csproj",
+        "projectUniqueName": "E:\\Learning\\Auth-Service\\AuthService\\AuthAPI\\AuthAPI.csproj",
         "projectName": "AuthAPI",
-        "projectPath": "E:\\Work\\Auth-Service\\AuthService\\AuthAPI\\AuthAPI.csproj",
-        "packagesPath": "C:\\Users\\abdow\\.nuget\\packages\\",
-        "outputPath": "E:\\Work\\Auth-Service\\AuthService\\AuthAPI\\obj\\",
+        "projectPath": "E:\\Learning\\Auth-Service\\AuthService\\AuthAPI\\AuthAPI.csproj",
+        "packagesPath": "C:\\Users\\David Maged\\.nuget\\packages\\",
+        "outputPath": "E:\\Learning\\Auth-Service\\AuthService\\AuthAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\abdow\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\David Maged\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -183,8 +228,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\Work\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj": {
-                "projectPath": "E:\\Work\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj"
+              "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj": {
+                "projectPath": "E:\\Learning\\Auth-Service\\AuthService\\Auth.Infrastructure\\Auth.Infrastructure.csproj"
               }
             }
           }
@@ -230,6 +275,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.27, 6.0.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -238,7 +301,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+>>>>>>> 302db1a1bc777f73b3ba995f1c4ee2cf2b490bcf
         }
       }
     }
