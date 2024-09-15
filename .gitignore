@@ -9,6 +9,7 @@
 *.userosscache
 *.sln.docstates
 
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -328,3 +329,22 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/AuthService/Auth.Applicatoin/obj/Debug/net6.0/ref/Auth.Applicatoin.dll
+/AuthService/Auth.Applicatoin/obj/Debug/net6.0/refint/Auth.Applicatoin.dll
+/AuthService/Auth.Applicatoin/bin/Debug/net6.0/Auth.Applicatoin.dll
+/AuthService/Auth.Applicatoin/bin/Debug/net6.0/Auth.Applicatoin.pdb
+/AuthService/Auth.Applicatoin/obj/Debug/net6.0/Auth.Applicatoin.AssemblyInfo.cs
+/AuthService/Auth.Applicatoin/obj/Debug/net6.0/Auth.Applicatoin.dll
+/AuthService/Auth.Applicatoin/obj/Debug/net6.0/Auth.Applicatoin.pdb
+/AuthService/Auth.Applicatoin/obj/Debug/net6.0/Auth.Applicatoin.sourcelink.json
+/AuthService/Auth.Core/bin/Debug/net6.0/Auth.Core.dll
+/AuthService/Auth.Core/bin/Debug/net6.0/Auth.Core.pdb
+/AuthService/Auth.Core/obj/Debug/net6.0/ref/Auth.Core.dll
+/AuthService/Auth.Core/obj/Debug/net6.0/Auth.Core.AssemblyInfo.cs
+/AuthService/Auth.Core/obj/Debug/net6.0/Auth.Core.AssemblyInfoInputs.cache
+/AuthService/Auth.Core/obj/Debug/net6.0/refint/Auth.Core.dll
+/AuthService/Auth.Core/obj/Debug/net6.0/Auth.Core.dll
+/AuthService/Auth.Core/obj/Debug/net6.0/Auth.Core.pdb
+/AuthService/Auth.Core/obj/Debug/net6.0/Auth.Core.sourcelink.json
+/AuthService/Auth.Infrastructure/obj/Debug/net6.0/Auth.Infrastructure.AssemblyInfo.cs
+/AuthService/AuthAPI/obj/Debug/net6.0/AuthAPI.AssemblyInfo.cs
