@@ -1,7 +1,5 @@
-﻿
-using Auth.Applicatoin.DTOs.Requests;
-using Auth.Applicatoin.Models;
-using Auth.Core.Entities;
+﻿using Auth.Applicatoin.DTOs.Requests;
+using Auth.Infrastructure.Models;
 
 namespace Auth.Applicatoin.Mappers.FromDTOToEntity
 {

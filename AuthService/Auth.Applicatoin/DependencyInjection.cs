@@ -1,6 +1,6 @@
 ﻿using Auth.Applicatoin.BusinessInterfaces;
 using Auth.Applicatoin.BusinessLogic;
-using Auth.Applicatoin.Models;
+using Auth.Infrastructure.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +13,7 @@ namespace Auth.Applicatoin
         {
             services.AddTransient<IAuthProcessor, AuthProcessor>();
 
-            services.AddIdentity<ApplicationUser, IdentityRole>();
+            //services.AddIdentity<ApplicationUser, IdentityRole>();
             return services;
         }
     }

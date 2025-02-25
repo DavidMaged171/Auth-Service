@@ -2,15 +2,11 @@
 using Auth.Applicatoin.DTOs.Requests;
 using Auth.Applicatoin.DTOs.Resopnse;
 using Auth.Applicatoin.Helpers;
-using Auth.Applicatoin.Mappers.FromDTOToEntity;
-using Auth.Applicatoin.Models;
+using Auth.Infrastructure.Models;
 using Auth.Infrastructure.Persistence.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using Microsoft.Extensions.Configuration;
+
 
 namespace Auth.Applicatoin.BusinessLogic
 {
@@ -19,65 +15,122 @@ namespace Auth.Applicatoin.BusinessLogic
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly JWT _jwt;
-        public AuthProcessor (UserManager<ApplicationUser> userManager,IUnitOfWork unitOfWork,IOptions<JWT> jwt)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IConfiguration _configuration;
+        public AuthProcessor(
+            UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager,
+            IConfiguration configuration,IUnitOfWork unitOfWork)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
+            _configuration = configuration;
             _unitOfWork = unitOfWork;
-            _jwt = jwt.Value;
         }
-        public async Task<RegestrationResponse> RegisterNewUser(RegisterationRequest request)
+        public async Task<GenericResponseClass<RegestrationResponse>> RegisterNewUser(RegisterationRequest request)
         {
-            var user = await _userManager.FindByEmailAsync(request.Email);
-            if (user!= null)
+            try
             {
-                return new RegestrationResponse { User=user,isRegistered=true };
-            }
-            user= FromUserDTOToUser.Map(request);
-                
-                var res=await _userManager.CreateAsync(user,request.Password);
-                if(!res.Succeeded) 
+                var user = await _userManager.FindByEmailAsync(request.Email);
+                if (user != null)
                 {
-                    var errors = new List<string>();
-                    foreach(var error in res.Errors)
-                    {
-                        errors.Add(error.Description);
-                    }
-                    return new RegestrationResponse { User=null,errors=errors };
+                    return HandleUserExists(ResponseMessages.EmailAlreadyRegistered);
                 }
-                await _userManager.AddToRoleAsync(user,"User");
-            var JwtSecurityToken = await CreateJwtToken(user);
-            return new RegestrationResponse() { User=user,isRegistered=true,};
-        }
-        private async Task<JwtSecurityToken> CreateJwtToken(ApplicationUser user)
-        {
-            var userClaims = await _userManager.GetClaimsAsync(user);
-            var roles = await _userManager.GetRolesAsync(user);
-            var roleClaims = new List<Claim>();
+                user = await _userManager.FindByNameAsync(request.Username);
+                if (user != null)
+                {
+                    return HandleUserExists(ResponseMessages.UserNameAlreadyRegistered);
+                }
+                ApplicationUser appUser = CreateApplicationUser(request);
 
-            foreach (var role in roles)
-                roleClaims.Add(new Claim("roles", role));
 
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim("uid", user.Id.ToString())
+                var result =await _userManager.CreateAsync(appUser, request.Password);                
+                if (result.Succeeded)
+                {
+                    return new GenericResponseClass<RegestrationResponse>() 
+                    { 
+                        Result=new RegestrationResponse()
+                        {
+                            isRegistered=true,
+                            errors=null
+                        },
+                        ResponseMessage=ResponseMessages.UserRegisteredSuccessfully,
+                        Status=Enums.ResponseStatus.Success,
+                    };
+                }
+                else
+                {
+                    return new GenericResponseClass<RegestrationResponse>()
+                    {
+                        Result = new RegestrationResponse()
+                        {
+                            isRegistered = false,
+                            errors = GetErrors(result)
+                        },
+                        ResponseMessage = ResponseMessages.ErrorsWhileRegisterUser,
+                        Status = Enums.ResponseStatus.Failed,
+                    };
+                }
             }
-            .Union(userClaims)
-            .Union(roleClaims);
+            catch (Exception ex) 
+            {
+                return null;   
+            }
+            finally
+            {
 
-            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key));
-            var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
-
-            var jwtSecurityToken = new JwtSecurityToken(
-                issuer: _jwt.Issuer,
-                audience: _jwt.Audience,
-                claims: claims,
-                expires: DateTime.Now.AddDays(_jwt.DurationInDays),
-                signingCredentials: signingCredentials);
-
-            return jwtSecurityToken;
+            }
         }
+        private List<string> GetErrors(IdentityResult result)
+        {
+            var errors = new List<string>();
+            foreach (var error in result.Errors)
+            {
+                errors.Add(error.Description);
+            }
+            return errors;
+        }
+        private GenericResponseClass<RegestrationResponse> HandleUserExists(string errorMessage)
+        {
+            try
+            {
+                return new GenericResponseClass<RegestrationResponse>() 
+                {
+                    Result=new RegestrationResponse()
+                    {
+                        errors = new List<string>()
+                        {
+                            errorMessage
+                        },
+                        isRegistered = true,                        
+                    },
+                    ResponseMessage=ResponseMessages.ErrorsWhileRegisterUser,
+                    Status=Enums.ResponseStatus.Failed,
+                };
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally 
+            {
+                
+            }
+        }
+        
+        private ApplicationUser CreateApplicationUser(RegisterationRequest request)
+        {
+            return  new ApplicationUser()
+            {
+                Email = request.Email,
+                SecurityStamp = Guid.NewGuid().ToString(),
+                UserName = request.Username,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Password = request.Password,
+            };
+        }
+
+        
     }
 }

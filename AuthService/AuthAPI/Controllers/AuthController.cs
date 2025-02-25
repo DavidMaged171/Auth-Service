@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthAPI.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class AuthController : Controller
     {
         private readonly IAuthProcessor _authProcessor;
@@ -14,7 +16,7 @@ namespace AuthAPI.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task <RegestrationResponse> ResultAsync(RegisterationRequest request)
+        public GenericResponseClass<RegestrationResponse> Register(RegisterationRequest request)
         {
             return _authProcessor.RegisterNewUser(request).Result;
         }
