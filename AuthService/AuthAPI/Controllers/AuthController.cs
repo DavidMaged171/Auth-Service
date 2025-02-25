@@ -20,5 +20,10 @@ namespace AuthAPI.Controllers
         {
             return _authProcessor.RegisterNewUser(request).Result;
         }
+        [HttpPost("Login")]
+        public GenericResponseClass<LoginResponse> Login(LoginRequest request)
+        {
+            return _authProcessor.Login(request).Result;
+        }
     }
 }
