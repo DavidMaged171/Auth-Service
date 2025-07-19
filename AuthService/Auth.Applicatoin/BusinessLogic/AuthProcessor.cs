@@ -173,12 +173,21 @@ namespace Auth.Applicatoin.BusinessLogic
                     Status=Enums.ResponseStatus.Success
                 };
             }
-            else
+            else if(user==null)
             {
                 return new GenericResponseClass<LoginResponse>()
                 {
                     Result = null,
                     ResponseMessage = ResponseMessages.UserNotRegistered,
+                    Status = Enums.ResponseStatus.Failed
+                };
+            }
+            else
+            {
+                return new GenericResponseClass<LoginResponse>()
+                {
+                    Result = null,
+                    ResponseMessage = ResponseMessages.ErrorsWhileLogin,
                     Status = Enums.ResponseStatus.Failed
                 };
             }

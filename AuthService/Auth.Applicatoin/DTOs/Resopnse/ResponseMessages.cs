@@ -11,5 +11,6 @@ namespace Auth.Applicatoin.DTOs.Resopnse
         public static string ErrorsWhileRegisterUser { get { return "Error while reister user"; } }
         public static string LoggedInSuccessfully { get { return "Logged in successfully"; } }
         public static string UserNotRegistered { get { return "User Not Registered"; } }
+        public static string ErrorsWhileLogin { get { return "User name or password invalid"; } }
     }
 }

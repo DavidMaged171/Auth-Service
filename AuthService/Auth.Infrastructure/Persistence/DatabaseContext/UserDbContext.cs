@@ -19,7 +19,7 @@ namespace Auth.Infrastructure.Persistence.DatabaseContext
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                 _configuration = configurationBuilder.Build();
-                optionsBuilder.UseSqlServer(_configuration.GetConnectionString("EmploymentSystemDB"));
+                optionsBuilder.UseSqlServer(_configuration.GetConnectionString("UserDB"));
             }
         }
     }
