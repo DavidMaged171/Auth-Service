@@ -1,5 +1,6 @@
 using Auth.Applicatoin;
 using Auth.Infrastructure;
+using AuthAPI.Middlewares;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,7 +27,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
+app.UseMiddleware<ErrorHandlingMiddleware>();
 app.MapControllers();
 
 app.Run();

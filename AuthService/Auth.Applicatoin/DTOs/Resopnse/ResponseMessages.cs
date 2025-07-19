@@ -12,5 +12,8 @@ namespace Auth.Applicatoin.DTOs.Resopnse
         public static string LoggedInSuccessfully { get { return "Logged in successfully"; } }
         public static string UserNotRegistered { get { return "User Not Registered"; } }
         public static string ErrorsWhileLogin { get { return "User name or password invalid"; } }
+        public static string UserNotFound { get { return "User not found"; } }
+        public static string UserDeletedSsuccessfully{ get { return "User deleted successfully"; } }
+        public static string GenericError{ get { return "Error occoured, Contact system admin"; } }
     }
 }

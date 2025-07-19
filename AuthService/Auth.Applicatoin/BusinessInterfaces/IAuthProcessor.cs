@@ -7,6 +7,5 @@ namespace Auth.Applicatoin.BusinessInterfaces
     {
         public Task<GenericResponseClass<RegestrationResponse>> RegisterNewUser(RegisterationRequest request);
         public Task<GenericResponseClass<LoginResponse>> Login(LoginRequest request);
-
     }
 }

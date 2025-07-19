@@ -1,0 +1,26 @@
+﻿using Auth.Applicatoin.BusinessInterfaces;
+using Auth.Applicatoin.DTOs.Resopnse;
+using Auth.Applicatoin.Handlers;
+using Microsoft.AspNetCore.Mvc;
+
+namespace AuthAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UserManagerController : Controller
+    {
+        private readonly IUserManagerProcessor _userManagerProcessor;
+        public UserManagerController(IUserManagerProcessor userManagerProcessor)
+        {
+            _userManagerProcessor = userManagerProcessor;
+        }
+        [HttpDelete("DeleteUser")]
+        public GenericResponseClass<bool> DeleteUser(int userId)
+        {
+            return GenericExceptionHandler.Handle(() =>
+            {
+                return _userManagerProcessor.DeleteUser(userId).Result;
+            });
+        }
+    }
+}
