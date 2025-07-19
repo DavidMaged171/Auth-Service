@@ -21,7 +21,7 @@ namespace Auth.Infrastructure
                 configuration.GetConnectionString("UserDB")));
 
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole<int>>()
             .AddEntityFrameworkStores<UserDbContext>()
             .AddDefaultTokenProviders();
 

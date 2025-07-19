@@ -19,11 +19,11 @@ namespace Auth.Applicatoin.BusinessLogic
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IUnitOfWork _unitOfWork;
         private readonly JWT _jwt;
-        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly RoleManager<IdentityRole<int>> _roleManager;
         private readonly IConfiguration _configuration;
         public AuthProcessor(
             UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager,
+            RoleManager<IdentityRole<int>> roleManager,
             IConfiguration configuration,IUnitOfWork unitOfWork)
         {
             _userManager = userManager;

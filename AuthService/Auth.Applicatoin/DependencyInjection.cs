@@ -11,7 +11,7 @@ namespace Auth.Applicatoin
     {
         public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddTransient<IAuthProcessor, AuthProcessor>();
+            services.AddScoped<IAuthProcessor, AuthProcessor>();
 
             //services.AddIdentity<ApplicationUser, IdentityRole>();
             return services;

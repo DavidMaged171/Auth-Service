@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 namespace Auth.Infrastructure.Persistence.DatabaseContext
 {
-    public partial class UserDbContext:IdentityDbContext<ApplicationUser>
+    public partial class UserDbContext:IdentityDbContext<ApplicationUser,ApplicationRole,int>
     {
         public IConfiguration _configuration { get; set; }
         public UserDbContext() { }
