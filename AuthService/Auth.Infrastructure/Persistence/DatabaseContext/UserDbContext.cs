@@ -22,5 +22,27 @@ namespace Auth.Infrastructure.Persistence.DatabaseContext
                 optionsBuilder.UseSqlServer(_configuration.GetConnectionString("UserDB"));
             }
         }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<ApplicationRole>().HasData(
+                new ApplicationRole
+                {
+                    Id = 1,
+                    Name = "Buyer",
+                    NormalizedName = "BUYER",
+                    ConcurrencyStamp = Guid.NewGuid().ToString()
+                },
+                new ApplicationRole
+                {
+                    Id = 2,
+                    Name = "Seller",
+                    NormalizedName = "SELLER",
+                    ConcurrencyStamp = Guid.NewGuid().ToString()
+                }
+            );
+        }
+
     }
 }
