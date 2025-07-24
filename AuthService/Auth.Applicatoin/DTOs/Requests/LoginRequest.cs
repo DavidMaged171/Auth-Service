@@ -1,4 +1,5 @@
 ﻿
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Auth.Applicatoin.DTOs.Requests
@@ -8,6 +9,7 @@ namespace Auth.Applicatoin.DTOs.Requests
         [Required]
         public string Username { get; set; }
         [Required]
+        [PasswordPropertyText]
         public string Password { get; set; }
     }
 }

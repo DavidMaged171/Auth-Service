@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Auth.Infrastructure.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class SeedNeededRolesAndAdminUser : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,6 +52,18 @@ namespace Auth.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "IdentityUserRole<string>",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_IdentityUserRole<string>", x => new { x.UserId, x.RoleId });
                 });
 
             migrationBuilder.CreateTable(
@@ -160,6 +172,26 @@ namespace Auth.Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { 1, "ee710471-1d25-4aad-8384-e6dfabfa3810", "Admin", "ADMIN" },
+                    { 2, "718ff711-b3bc-4916-9000-88b46535c250", "Buyer", "BUYER" },
+                    { 3, "a345c738-07a5-454a-a21c-fd9f4fa77e82", "Seller", "SELLER" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "IsDeleted", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { 1, 0, "0fa179f6-a0d6-4154-81d2-491f86494a84", "admin@system.com", false, "admin", false, "admin", false, null, "ADMIN@SYSTEM.COM", "ADMIN", "Admin#123", null, null, false, "c4f46baa-cbee-43ff-abc6-79748a642adc", false, "admin" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { 1, 1 });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -216,6 +248,9 @@ namespace Auth.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "IdentityUserRole<string>");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

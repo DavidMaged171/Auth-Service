@@ -55,14 +55,21 @@ namespace Auth.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "28a56c45-3600-44dc-8314-7a1bbb913ade",
+                            ConcurrencyStamp = "ee710471-1d25-4aad-8384-e6dfabfa3810",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ConcurrencyStamp = "718ff711-b3bc-4916-9000-88b46535c250",
                             Name = "Buyer",
                             NormalizedName = "BUYER"
                         },
                         new
                         {
-                            Id = 2,
-                            ConcurrencyStamp = "ebcda692-8037-4fff-97e6-5d7e949b5155",
+                            Id = 3,
+                            ConcurrencyStamp = "a345c738-07a5-454a-a21c-fd9f4fa77e82",
                             Name = "Seller",
                             NormalizedName = "SELLER"
                         });
@@ -150,6 +157,27 @@ namespace Auth.Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0fa179f6-a0d6-4154-81d2-491f86494a84",
+                            Email = "admin@system.com",
+                            EmailConfirmed = false,
+                            FirstName = "admin",
+                            IsDeleted = false,
+                            LastName = "admin",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@SYSTEM.COM",
+                            NormalizedUserName = "ADMIN",
+                            Password = "Admin#123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "c4f46baa-cbee-43ff-abc6-79748a642adc",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
@@ -234,6 +262,26 @@ namespace Auth.Infrastructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 1
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.ToTable("IdentityUserRole<string>");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
