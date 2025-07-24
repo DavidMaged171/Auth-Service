@@ -13,7 +13,7 @@ namespace Auth.Applicatoin
         {
             services.AddScoped<IAuthProcessor, AuthProcessor>();
             services.AddScoped<IUserManagerProcessor, UserManagerProcessor>();
-
+            services.AddScoped<IRoleManagerProcessor, RoleManagerProcessor>();
             //services.AddIdentity<ApplicationUser, IdentityRole>();
             return services;
         }

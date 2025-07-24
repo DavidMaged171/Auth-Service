@@ -15,5 +15,8 @@ namespace Auth.Applicatoin.DTOs.Resopnse
         public static string UserNotFound { get { return "User not found"; } }
         public static string UserDeletedSsuccessfully{ get { return "User deleted successfully"; } }
         public static string GenericError{ get { return "Error occoured, Contact system admin"; } }
+        public static string RoleNotFound{ get { return "Can't find role with this name"; } }
+        public static string UserAlreadyInRole{ get { return "User already in role"; } }
+        public static string UserAssignedToRoleSuccessfully{ get { return "User assigned to role successfully"; } }
     }
 }
