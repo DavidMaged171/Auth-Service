@@ -67,6 +67,7 @@ namespace Auth.Infrastructure.Persistence.DatabaseContext
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
                 Password = "Admin#123",
                 IsDeleted = false,
+                PasswordHash= "AQAAAAEAACcQAAAAEPAvcU5gycwu9hD3t9lpgyeKkLzwXKO7gSKT+vU0n1A1kUAPgcxTQOMIWoeMbctlAg=="
             });
 
             builder.Entity<IdentityUserRole<int>>().HasData(new IdentityUserRole<int>

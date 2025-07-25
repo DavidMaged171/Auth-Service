@@ -176,7 +176,8 @@ namespace Auth.Infrastructure.Migrations
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "c4f46baa-cbee-43ff-abc6-79748a642adc",
                             TwoFactorEnabled = false,
-                            UserName = "admin"
+                            UserName = "admin",
+                            PasswordHash= "AQAAAAEAACcQAAAAEPAvcU5gycwu9hD3t9lpgyeKkLzwXKO7gSKT+vU0n1A1kUAPgcxTQOMIWoeMbctlAg=="
                         });
                 });
 

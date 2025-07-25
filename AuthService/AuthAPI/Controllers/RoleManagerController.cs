@@ -2,6 +2,7 @@
 using Auth.Applicatoin.DTOs.Requests;
 using Auth.Applicatoin.DTOs.Resopnse;
 using Auth.Applicatoin.Handlers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthAPI.Controllers
@@ -16,6 +17,7 @@ namespace AuthAPI.Controllers
             _roleManagerProcessor = roleManagerProcessor;
         }
         [HttpPost("AssignRoleToUser")]
+        [Authorize(Roles ="Admin")]
         public GenericResponseClass<bool> AssignRoleToUser(RoleAssignmentRequestDto requestDto)
         {
             return GenericExceptionHandler.Handle(() => 

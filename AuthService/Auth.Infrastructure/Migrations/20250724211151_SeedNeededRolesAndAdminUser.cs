@@ -185,7 +185,7 @@ namespace Auth.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "IsDeleted", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "Password", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "0fa179f6-a0d6-4154-81d2-491f86494a84", "admin@system.com", false, "admin", false, "admin", false, null, "ADMIN@SYSTEM.COM", "ADMIN", "Admin#123", null, null, false, "c4f46baa-cbee-43ff-abc6-79748a642adc", false, "admin" });
+                values: new object[] { 1, 0, "0fa179f6-a0d6-4154-81d2-491f86494a84", "admin@system.com", false, "admin", false, "admin", false, null, "ADMIN@SYSTEM.COM", "ADMIN", "Admin#123", "AQAAAAEAACcQAAAAEPAvcU5gycwu9hD3t9lpgyeKkLzwXKO7gSKT+vU0n1A1kUAPgcxTQOMIWoeMbctlAg==", null, false, "c4f46baa-cbee-43ff-abc6-79748a642adc", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

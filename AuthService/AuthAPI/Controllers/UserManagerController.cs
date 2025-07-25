@@ -1,6 +1,7 @@
 ﻿using Auth.Applicatoin.BusinessInterfaces;
 using Auth.Applicatoin.DTOs.Resopnse;
 using Auth.Applicatoin.Handlers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthAPI.Controllers
@@ -14,7 +15,9 @@ namespace AuthAPI.Controllers
         {
             _userManagerProcessor = userManagerProcessor;
         }
+
         [HttpDelete("DeleteUser")]
+        [Authorize(Roles ="Admin")]
         public GenericResponseClass<bool> DeleteUser(int userId)
         {
             return GenericExceptionHandler.Handle(() =>
