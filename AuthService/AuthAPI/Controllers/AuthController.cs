@@ -11,9 +11,11 @@ namespace AuthAPI.Controllers
     public class AuthController : Controller
     {
         private readonly IAuthProcessor _authProcessor;
-        public AuthController(IAuthProcessor authProcessor)
+        private readonly ILogger _logger;
+        public AuthController(IAuthProcessor authProcessor, ILogger logger)
         {
             _authProcessor = authProcessor;
+            _logger = logger;
         }
 
         [HttpPost("Register")]
@@ -22,7 +24,7 @@ namespace AuthAPI.Controllers
             return GenericExceptionHandler.Handle(() =>
             {
                 return _authProcessor.RegisterNewUser(request).Result;
-            });
+            },_logger);
         }
         [HttpPost("Login")]
         public GenericResponseClass<LoginResponse> Login(LoginRequest request)
@@ -30,7 +32,7 @@ namespace AuthAPI.Controllers
             return GenericExceptionHandler.Handle(() =>
             {
                 return _authProcessor.Login(request).Result;
-            });
+            },_logger);
         }
         
     }

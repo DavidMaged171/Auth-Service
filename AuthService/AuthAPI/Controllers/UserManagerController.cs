@@ -11,6 +11,7 @@ namespace AuthAPI.Controllers
     public class UserManagerController : Controller
     {
         private readonly IUserManagerProcessor _userManagerProcessor;
+        private readonly ILogger _logger;
         public UserManagerController(IUserManagerProcessor userManagerProcessor)
         {
             _userManagerProcessor = userManagerProcessor;
@@ -23,7 +24,7 @@ namespace AuthAPI.Controllers
             return GenericExceptionHandler.Handle(() =>
             {
                 return _userManagerProcessor.DeleteUser(userId).Result;
-            });
+            }, _logger);
         }
     }
 }

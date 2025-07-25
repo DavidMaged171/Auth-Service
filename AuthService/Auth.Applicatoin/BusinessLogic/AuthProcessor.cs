@@ -7,6 +7,7 @@ using Auth.Infrastructure.Persistence.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection.Metadata.Ecma335;
@@ -23,69 +24,65 @@ namespace Auth.Applicatoin.BusinessLogic
         private readonly JWT _jwt;
         private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly IConfiguration _configuration;
+        private readonly ILogger<AuthProcessor> _logger;
         public AuthProcessor(
             UserManager<ApplicationUser> userManager,
             RoleManager<ApplicationRole> roleManager,
-            IConfiguration configuration,IUnitOfWork unitOfWork)
+            IConfiguration configuration,IUnitOfWork unitOfWork,
+            ILogger<AuthProcessor> logger)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
             _unitOfWork = unitOfWork;
+            _logger = logger;
         }
         public async Task<GenericResponseClass<RegestrationResponse>> RegisterNewUser(RegisterationRequest request)
         {
-            try
+
+            _logger.LogInformation("Start RegisterNewUser");
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            if (user != null)
             {
-                var user = await _userManager.FindByEmailAsync(request.Email);
-                if (user != null)
-                {
-                    return HandleUserExists(ResponseMessages.EmailAlreadyRegistered);
-                }
-                user = await _userManager.FindByNameAsync(request.Username);
-                if (user != null)
-                {
-                    return HandleUserExists(ResponseMessages.UserNameAlreadyRegistered);
-                }
-                ApplicationUser appUser = CreateApplicationUser(request);
+                _logger.LogError("User email exists");
+                return HandleUserExists(ResponseMessages.EmailAlreadyRegistered);
+            }
+            user = await _userManager.FindByNameAsync(request.Username);
+            if (user != null)
+            {
+                _logger.LogError("Username exists");
+                return HandleUserExists(ResponseMessages.UserNameAlreadyRegistered);
+            }
+            ApplicationUser appUser = CreateApplicationUser(request);
 
 
-                var result =await _userManager.CreateAsync(appUser, request.Password);                
-                if (result.Succeeded)
+            var result = await _userManager.CreateAsync(appUser, request.Password);
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User created successfully");
+                return new GenericResponseClass<RegestrationResponse>()
                 {
-                    return new GenericResponseClass<RegestrationResponse>() 
-                    { 
-                        Result=new RegestrationResponse()
-                        {
-                            isRegistered=true,
-                            errors=null
-                        },
-                        ResponseMessage=ResponseMessages.UserRegisteredSuccessfully,
-                        Status=Enums.ResponseStatus.Success,
-                    };
-                }
-                else
-                {
-                    return new GenericResponseClass<RegestrationResponse>()
+                    Result = new RegestrationResponse()
                     {
-                        Result = new RegestrationResponse()
-                        {
-                            isRegistered = false,
-                            errors = GetErrors(result)
-                        },
-                        ResponseMessage = ResponseMessages.ErrorsWhileRegisterUser,
-                        Status = Enums.ResponseStatus.Failed,
-                    };
-                }
+                        isRegistered = true,
+                        errors = null
+                    },
+                    ResponseMessage = ResponseMessages.UserRegisteredSuccessfully,
+                    Status = Enums.ResponseStatus.Success,
+                };
             }
-            catch (Exception ex) 
+            _logger.LogError("Failed to create user ");
+            return new GenericResponseClass<RegestrationResponse>()
             {
-                return null;   
-            }
-            finally
-            {
+                Result = new RegestrationResponse()
+                {
+                    isRegistered = false,
+                    errors = GetErrors(result)
+                },
+                ResponseMessage = ResponseMessages.ErrorsWhileRegisterUser,
+                Status = Enums.ResponseStatus.Failed,
+            };
 
-            }
         }
         private List<string> GetErrors(IdentityResult result)
         {
@@ -138,6 +135,7 @@ namespace Auth.Applicatoin.BusinessLogic
 
         public async Task<GenericResponseClass<LoginResponse>> Login(LoginRequest request)
         {
+            _logger.LogInformation("Start Login");
             var user = await _userManager.FindByNameAsync(request.Username);
             if (user != null && await _userManager.CheckPasswordAsync(user, request.Password))
             {
@@ -164,7 +162,7 @@ namespace Auth.Applicatoin.BusinessLogic
                     claims: authClaims,
                     signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                     );
-
+                _logger.LogInformation("User Logged in successfully");
                 return new GenericResponseClass<LoginResponse>()
                 {
                     Result=new LoginResponse() 
@@ -178,6 +176,7 @@ namespace Auth.Applicatoin.BusinessLogic
             }
             else if(user==null)
             {
+                _logger.LogError("user doesn't exists");
                 return new GenericResponseClass<LoginResponse>()
                 {
                     Result = null,
@@ -187,6 +186,7 @@ namespace Auth.Applicatoin.BusinessLogic
             }
             else
             {
+                _logger.LogError("error in username or password");
                 return new GenericResponseClass<LoginResponse>()
                 {
                     Result = null,

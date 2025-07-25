@@ -1,11 +1,7 @@
 using Auth.Applicatoin;
 using Auth.Infrastructure;
 using AuthAPI.Middlewares;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using System.Text;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,13 +34,15 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
+builder.Services.AddLogging(builder =>
+{
+    builder.AddFile("Logs/app.log");
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

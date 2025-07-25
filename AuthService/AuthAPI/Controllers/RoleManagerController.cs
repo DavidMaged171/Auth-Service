@@ -4,6 +4,7 @@ using Auth.Applicatoin.DTOs.Resopnse;
 using Auth.Applicatoin.Handlers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.InteropServices;
 
 namespace AuthAPI.Controllers
 {
@@ -12,9 +13,11 @@ namespace AuthAPI.Controllers
     public class RoleManagerController : Controller
     {
         private readonly IRoleManagerProcessor _roleManagerProcessor;
-        public RoleManagerController(IRoleManagerProcessor roleManagerProcessor)
+        private readonly ILogger _logger;
+        public RoleManagerController(IRoleManagerProcessor roleManagerProcessor, ILogger logger)
         {
             _roleManagerProcessor = roleManagerProcessor;
+            _logger = logger;
         }
         [HttpPost("AssignRoleToUser")]
         [Authorize(Roles ="Admin")]
@@ -23,7 +26,7 @@ namespace AuthAPI.Controllers
             return GenericExceptionHandler.Handle(() => 
             {
                 return _roleManagerProcessor.AssignRoleToUser(requestDto).Result;
-            });
+            },_logger);
         }
     }
 }
